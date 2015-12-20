@@ -1,0 +1,9 @@
+rootProject.name = 'bookstore'
+
+def String[] modules = [
+        'bookstore-shared',
+        'bookstore-web-resources',
+        'chapter1-bookstore'
+]
+
+include modules
