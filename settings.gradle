@@ -3,7 +3,9 @@ rootProject.name = 'bookstore'
 def String[] modules = [
         'bookstore-shared',
         'bookstore-web-resources',
-        'chapter1-bookstore'
+        'chapter1-bookstore',
+        'chapter2-bookstore',
+        'chapter3-bookstore'
 ]
 
 include modules
