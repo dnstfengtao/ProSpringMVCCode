@@ -5,7 +5,8 @@ def String[] modules = [
         'bookstore-web-resources',
         'chapter1-bookstore',
         'chapter2-bookstore',
-        'chapter3-bookstore'
+        'chapter3-bookstore',
+        'chapter5-bookstore'
 ]
 
 include modules
