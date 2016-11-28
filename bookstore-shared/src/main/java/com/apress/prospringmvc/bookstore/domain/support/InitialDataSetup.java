@@ -232,7 +232,7 @@ public class InitialDataSetup {
 
             private boolean dataIsAlreadyPresent() {
                 return InitialDataSetup.this.entityManager.createQuery("select count(a.id) from Account a", Long.class)
-                        .getSingleResult().longValue() > 0;
+                        .getSingleResult() > 0;
             }
         });
         EntityBuilderManager.clearEntityManager();
