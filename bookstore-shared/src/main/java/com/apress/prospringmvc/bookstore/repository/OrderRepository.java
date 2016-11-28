@@ -7,16 +7,15 @@ import com.apress.prospringmvc.bookstore.domain.Order;
 
 /**
  * Repository for working with {@link Order} domain objects
- *  
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public interface OrderRepository {
 
     /**
      * Find the {@link Order} for the given id.
-     * 
+     *
      * @param id id of the order to find.
      * @return the order belonging to the id.
      */
@@ -29,6 +28,7 @@ public interface OrderRepository {
 
     /**
      * Find the orders for the given {@link Account}.
+     *
      * @param customer the account
      * @return list of orders for the account, never <code>null</code>
      */

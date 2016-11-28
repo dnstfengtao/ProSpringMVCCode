@@ -9,41 +9,40 @@ import com.apress.prospringmvc.bookstore.domain.Account;
 import com.apress.prospringmvc.bookstore.repository.AccountRepository;
 
 /**
- * @see AccountService
  * @author Marten Deinum
  * @author Koen Serneels
- *
+ * @see AccountService
  */
 @Service
 @Transactional(readOnly = true)
 public class AccountServiceImpl implements AccountService {
 
-	@Autowired
-	private AccountRepository accountRepository;
+    @Autowired
+    private AccountRepository accountRepository;
 
-	@Override
-	@Transactional(readOnly = false)
-	public Account save(Account account) {
-		return this.accountRepository.save(account);
-	}
+    @Override
+    @Transactional(readOnly = false)
+    public Account save(Account account) {
+        return this.accountRepository.save(account);
+    }
 
-	@Override
-	public Account login(String username, String password) throws AuthenticationException {
-		Account account = this.accountRepository.findByUsername(username);
-		if (account != null) {
-			String pwd = DigestUtils.sha256Hex(password + "{" + username + "}");
-			if (!account.getPassword().equalsIgnoreCase(pwd)) {
-				throw new AuthenticationException("Wrong username/password combination.", "invalid.password");
-			}
-		} else {
-			throw new AuthenticationException("Wrong username/password combination.", "invalid.username");
-		}
+    @Override
+    public Account login(String username, String password) throws AuthenticationException {
+        Account account = this.accountRepository.findByUsername(username);
+        if (account != null) {
+            String pwd = DigestUtils.sha256Hex(password + "{" + username + "}");
+            if (!account.getPassword().equalsIgnoreCase(pwd)) {
+                throw new AuthenticationException("Wrong username/password combination.", "invalid.password");
+            }
+        } else {
+            throw new AuthenticationException("Wrong username/password combination.", "invalid.username");
+        }
 
-		return account;
-	}
+        return account;
+    }
 
-	@Override
-	public Account getAccount(String username) {
-		return this.accountRepository.findByUsername(username);
-	}
+    @Override
+    public Account getAccount(String username) {
+        return this.accountRepository.findByUsername(username);
+    }
 }

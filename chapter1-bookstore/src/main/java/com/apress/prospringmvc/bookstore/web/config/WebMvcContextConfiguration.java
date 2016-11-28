@@ -7,10 +7,9 @@ import com.apress.prospringmvc.bookstore.web.IndexController;
 
 /**
  * Spring MVC configuration
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 @Configuration
 public class WebMvcContextConfiguration {

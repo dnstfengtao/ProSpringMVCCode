@@ -8,9 +8,8 @@ import java.lang.annotation.Target;
 /**
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
-@Target({ ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER })
+@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DateFormat {
 

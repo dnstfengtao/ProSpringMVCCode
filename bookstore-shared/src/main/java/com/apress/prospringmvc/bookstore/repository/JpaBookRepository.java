@@ -1,8 +1,5 @@
 package com.apress.prospringmvc.bookstore.repository;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -10,6 +7,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
@@ -21,10 +21,9 @@ import com.apress.prospringmvc.bookstore.domain.Category;
 
 /**
  * JPA implementation for the {@link BookRepository}.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 @Repository("bookRepository")
 public class JpaBookRepository implements BookRepository {
@@ -62,12 +61,12 @@ public class JpaBookRepository implements BookRepository {
         List<Predicate> predicates = new ArrayList<Predicate>();
         if (StringUtils.hasText(bookSearchCriteria.getTitle())) {
             String title = bookSearchCriteria.getTitle().toUpperCase();
-            predicates.add(builder.like(builder.upper(book.<String> get("title")), "%" + title + "%"));
+            predicates.add(builder.like(builder.upper(book.<String>get("title")), "%" + title + "%"));
         }
 
         if (bookSearchCriteria.getCategory() != null) {
             Category category = this.entityManager.find(Category.class, bookSearchCriteria.getCategory().getId());
-            predicates.add(builder.equal(book.<Category> get("category"), category));
+            predicates.add(builder.equal(book.<Category>get("category"), category));
         }
 
         if (!predicates.isEmpty()) {

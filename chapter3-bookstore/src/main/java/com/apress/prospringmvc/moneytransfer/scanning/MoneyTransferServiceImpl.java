@@ -9,7 +9,6 @@ import com.apress.prospringmvc.moneytransfer.repository.TransactionRepository;
 import com.apress.prospringmvc.moneytransfer.service.AbstractMoneyTransferService;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */

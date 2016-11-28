@@ -9,7 +9,6 @@ import com.apress.prospringmvc.moneytransfer.repository.MapBasedTransactionRepos
 import com.apress.prospringmvc.moneytransfer.repository.TransactionRepository;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */

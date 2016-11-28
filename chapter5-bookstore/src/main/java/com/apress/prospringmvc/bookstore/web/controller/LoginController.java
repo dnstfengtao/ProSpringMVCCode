@@ -14,11 +14,10 @@ import com.apress.prospringmvc.bookstore.service.AccountService;
 import com.apress.prospringmvc.bookstore.service.AuthenticationException;
 
 /**
- * Controller to handle login. 
- * 
+ * Controller to handle login.
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 @Controller
 @RequestMapping(value = "/login")
@@ -36,7 +35,7 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String handleLogin(@RequestParam String username, @RequestParam String password,
-            RedirectAttributes redirect, HttpSession session) throws AuthenticationException {
+                              RedirectAttributes redirect, HttpSession session) throws AuthenticationException {
         try {
             Account account = this.accountService.login(username, password);
             session.setAttribute(ACCOUNT_ATTRIBUTE, account);

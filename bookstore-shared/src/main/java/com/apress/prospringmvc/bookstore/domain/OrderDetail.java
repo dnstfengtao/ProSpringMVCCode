@@ -1,21 +1,16 @@
 package com.apress.prospringmvc.bookstore.domain;
 
+import javax.persistence.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
  * An order detail is the link table between {@link Order} and {@link Book} We also store how many books are ordered in
  * the {@link #quantity} field
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 @Entity
 public class OrderDetail implements Serializable {

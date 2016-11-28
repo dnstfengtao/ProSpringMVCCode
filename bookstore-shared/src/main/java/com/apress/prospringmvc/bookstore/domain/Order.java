@@ -1,5 +1,7 @@
 package com.apress.prospringmvc.bookstore.domain;
 
+import javax.persistence.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -8,68 +10,45 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 @Entity
 // order is a reserved SQL keyword, hence the explicit table definition
 @Table(name = "orders")
 public class Order implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Embedded
-    @AttributeOverrides({ @AttributeOverride(name = "street", column = @Column(name = "shipping_street")),
-            @AttributeOverride(name = "houseNumber", column = @Column(name = "shipping_houseNumber")),
-            @AttributeOverride(name = "boxNumber", column = @Column(name = "shipping_boxNumber")),
-            @AttributeOverride(name = "city", column = @Column(name = "shipping_city")),
-            @AttributeOverride(name = "postalCode", column = @Column(name = "shipping_postalCode")),
-            @AttributeOverride(name = "country", column = @Column(name = "shipping_country")) })
-    private Address shippingAddress;
-
-    @Embedded
-    @AttributeOverrides({ @AttributeOverride(name = "street", column = @Column(name = "billing_street")),
-            @AttributeOverride(name = "houseNumber", column = @Column(name = "billing_houseNumber")),
-            @AttributeOverride(name = "boxNumber", column = @Column(name = "billing_boxNumber")),
-            @AttributeOverride(name = "city", column = @Column(name = "billing_city")),
-            @AttributeOverride(name = "postalCode", column = @Column(name = "billing_postalCode")),
-            @AttributeOverride(name = "country", column = @Column(name = "billing_country")) })
-    private Address billingAddress;
-
-    @ManyToOne(optional = false)
-    private Account account;
-
-    private boolean billingSameAsShipping = true;
-
-    private Date orderDate;
-    private Date deliveryDate;
-
-    private BigDecimal totalOrderPrice = null;
-
     // One to many creates a join table by default, prevent this as
     // order detail is our specific join table
     @JoinColumn(name = "order_id")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private final List<OrderDetail> orderDetails = new ArrayList<OrderDetail>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Embedded
+    @AttributeOverrides({@AttributeOverride(name = "street", column = @Column(name = "shipping_street")),
+            @AttributeOverride(name = "houseNumber", column = @Column(name = "shipping_houseNumber")),
+            @AttributeOverride(name = "boxNumber", column = @Column(name = "shipping_boxNumber")),
+            @AttributeOverride(name = "city", column = @Column(name = "shipping_city")),
+            @AttributeOverride(name = "postalCode", column = @Column(name = "shipping_postalCode")),
+            @AttributeOverride(name = "country", column = @Column(name = "shipping_country"))})
+    private Address shippingAddress;
+    @Embedded
+    @AttributeOverrides({@AttributeOverride(name = "street", column = @Column(name = "billing_street")),
+            @AttributeOverride(name = "houseNumber", column = @Column(name = "billing_houseNumber")),
+            @AttributeOverride(name = "boxNumber", column = @Column(name = "billing_boxNumber")),
+            @AttributeOverride(name = "city", column = @Column(name = "billing_city")),
+            @AttributeOverride(name = "postalCode", column = @Column(name = "billing_postalCode")),
+            @AttributeOverride(name = "country", column = @Column(name = "billing_country"))})
+    private Address billingAddress;
+    @ManyToOne(optional = false)
+    private Account account;
+    private boolean billingSameAsShipping = true;
+    private Date orderDate;
+    private Date deliveryDate;
+    private BigDecimal totalOrderPrice = null;
 
     public Order() {
         super();
@@ -112,12 +91,12 @@ public class Order implements Serializable {
         return this.id;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
     public Account getAccount() {
         return this.account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public List<OrderDetail> getOrderDetails() {
@@ -153,7 +132,8 @@ public class Order implements Serializable {
     }
 
     /**
-     * Update the order details and update the total price. If the quantity is 0 or less the order detail is removed from the list.
+     * Update the order details and update the total price. If the quantity is 0 or less the order detail is removed
+     * from the list.
      */
     public void updateOrderDetails() {
         BigDecimal total = BigDecimal.ZERO;

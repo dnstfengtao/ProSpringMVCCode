@@ -17,24 +17,23 @@ import com.apress.prospringmvc.bookstore.web.config.WebMvcContextConfiguration;
  * of the JEE {@code ServletContainerInitializer} pattern. This class will be called on application startup and will
  * configure our JEE and Spring configuration.
  * <p/>
- * 
+ * <p>
  * It will first initializes our {@code AnnotationConfigWebApplicationContext} with the common {@link Configuration}
  * classes: {@code InfrastructureContextConfiguration} and {@code TestDataContextConfiguration} using a typical JEE
  * {@code ContextLoaderListener}.
  * <p/>
- * 
+ * <p>
  * Next it creates a {@link DispatcherServlet}, being a normal JEE Servlet which will create on its turn a child
  * {@code AnnotationConfigWebApplicationContext} configured with the Spring MVC {@code Configuration} classes
  * {@code WebMvcContextConfiguration} and {@code WebflowContextConfiguration}. This Servlet will be registered using
  * JEE's programmatical API support.
  * <p/>
- * 
+ * <p>
  * Note: the {@code OpenEntityManagerInViewFilter} is only enabled for pages served soley via Spring MVC. For pages
  * being served via WebFlow we configured WebFlow to use the JpaFlowExecutionListener.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 public class BookstoreWebApplicationInitializer implements WebApplicationInitializer {
 
@@ -52,7 +51,8 @@ public class BookstoreWebApplicationInitializer implements WebApplicationInitial
     }
 
     /**
-     * Factory method to create {@link AnnotationConfigWebApplicationContext} instances. 
+     * Factory method to create {@link AnnotationConfigWebApplicationContext} instances.
+     *
      * @param annotatedClasses
      * @return
      */

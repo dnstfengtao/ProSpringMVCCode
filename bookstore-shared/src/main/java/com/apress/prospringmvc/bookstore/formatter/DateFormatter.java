@@ -12,7 +12,6 @@ import org.springframework.util.StringUtils;
 /**
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public class DateFormatter implements Formatter<Date> {
 

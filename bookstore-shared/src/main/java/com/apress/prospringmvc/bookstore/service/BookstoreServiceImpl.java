@@ -8,22 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.apress.prospringmvc.bookstore.domain.Account;
-import com.apress.prospringmvc.bookstore.domain.Book;
-import com.apress.prospringmvc.bookstore.domain.BookSearchCriteria;
-import com.apress.prospringmvc.bookstore.domain.Cart;
-import com.apress.prospringmvc.bookstore.domain.Category;
-import com.apress.prospringmvc.bookstore.domain.Order;
-import com.apress.prospringmvc.bookstore.domain.OrderDetail;
+import com.apress.prospringmvc.bookstore.domain.*;
 import com.apress.prospringmvc.bookstore.repository.BookRepository;
 import com.apress.prospringmvc.bookstore.repository.CategoryRepository;
 import com.apress.prospringmvc.bookstore.repository.OrderRepository;
 
 /**
- * @see BookstoreService
  * @author Marten Deinum
  * @author Koen Serneels
- *
+ * @see BookstoreService
  */
 @Service("bookstoreService")
 @Transactional(readOnly = true)

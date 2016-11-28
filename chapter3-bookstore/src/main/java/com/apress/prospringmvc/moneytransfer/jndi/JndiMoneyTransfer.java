@@ -1,8 +1,8 @@
 package com.apress.prospringmvc.moneytransfer.jndi;
 
-import java.math.BigDecimal;
-
 import javax.naming.NamingException;
+
+import java.math.BigDecimal;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,6 @@ import com.apress.prospringmvc.moneytransfer.repository.MapBasedTransactionRepos
 import com.apress.prospringmvc.moneytransfer.simple.SimpleMoneyTransfer;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */
@@ -23,7 +22,7 @@ public class JndiMoneyTransfer {
 
     /**
      * @param args
-     * @throws NamingException 
+     * @throws NamingException
      */
     public static void main(String[] args) throws NamingException {
         setupJndi();

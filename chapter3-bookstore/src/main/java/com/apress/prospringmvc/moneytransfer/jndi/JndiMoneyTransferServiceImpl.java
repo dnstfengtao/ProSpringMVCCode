@@ -1,9 +1,9 @@
 package com.apress.prospringmvc.moneytransfer.jndi;
 
-import java.math.BigDecimal;
-
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+
+import java.math.BigDecimal;
 
 import com.apress.prospringmvc.moneytransfer.domain.Account;
 import com.apress.prospringmvc.moneytransfer.domain.MoneyTransferTransaction;
@@ -13,13 +13,12 @@ import com.apress.prospringmvc.moneytransfer.repository.TransactionRepository;
 import com.apress.prospringmvc.moneytransfer.service.MoneyTransferService;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */
 public class JndiMoneyTransferServiceImpl implements MoneyTransferService {
 
-    private AccountRepository accountRepository;
+    private AccountRepository     accountRepository;
     private TransactionRepository transactionRepository;
 
     public JndiMoneyTransferServiceImpl() {

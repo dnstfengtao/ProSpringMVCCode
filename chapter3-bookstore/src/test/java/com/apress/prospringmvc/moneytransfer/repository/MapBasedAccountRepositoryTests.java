@@ -1,12 +1,12 @@
 package com.apress.prospringmvc.moneytransfer.repository;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import com.apress.prospringmvc.moneytransfer.domain.Account;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class MapBasedAccountRepositoryTests {
 

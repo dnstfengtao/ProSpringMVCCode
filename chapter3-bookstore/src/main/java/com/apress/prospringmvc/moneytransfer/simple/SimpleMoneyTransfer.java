@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import com.apress.prospringmvc.moneytransfer.domain.Transaction;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */

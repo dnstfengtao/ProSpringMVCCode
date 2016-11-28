@@ -1,9 +1,5 @@
 package com.apress.prospringmvc.moneytransfer.repository;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.math.BigDecimal;
 import java.util.Set;
 
@@ -12,6 +8,8 @@ import org.junit.Test;
 import com.apress.prospringmvc.moneytransfer.domain.Account;
 import com.apress.prospringmvc.moneytransfer.domain.MoneyTransferTransaction;
 import com.apress.prospringmvc.moneytransfer.domain.Transaction;
+
+import static org.junit.Assert.*;
 
 public class MapBasedTransactionRepositoryTests {
 

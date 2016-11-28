@@ -10,30 +10,29 @@ import com.apress.prospringmvc.bookstore.domain.Category;
 import com.apress.prospringmvc.bookstore.repository.CategoryRepository;
 
 /**
- * @see CategoryService
  * @author Marten Deinum
  * @author Koen Serneels
- *
+ * @see CategoryService
  */
 @Service("categoryService")
 @Transactional(readOnly = true)
 public class CategoryServiceImpl implements CategoryService {
 
-	@Autowired
-	private CategoryRepository categoryRepository;
+    @Autowired
+    private CategoryRepository categoryRepository;
 
-	@Override
-	public Category findById(long id) {
-		return categoryRepository.findById(id);
-	}
+    @Override
+    public Category findById(long id) {
+        return categoryRepository.findById(id);
+    }
 
-	@Override
-	public List<Category> findAll() {
-		return this.categoryRepository.findAll();
-	}
+    @Override
+    public List<Category> findAll() {
+        return this.categoryRepository.findAll();
+    }
 
-	@Override
-	public void addCategory(Category category) {
-		categoryRepository.storeCategory(category);
-	}
+    @Override
+    public void addCategory(Category category) {
+        categoryRepository.storeCategory(category);
+    }
 }

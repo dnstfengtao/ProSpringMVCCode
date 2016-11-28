@@ -8,22 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import com.apress.prospringmvc.bookstore.domain.Account;
 import com.apress.prospringmvc.bookstore.repository.AccountRepository;
 import com.apress.prospringmvc.bookstore.repository.OrderRepository;
 
 /**
- *  
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 @Controller
 @RequestMapping("/customer/account")
@@ -59,7 +52,7 @@ public class AccountController {
         return "customer/account";
     }
 
-    @RequestMapping(value = "/{accountId}", method = { RequestMethod.POST, RequestMethod.PUT })
+    @RequestMapping(value = "/{accountId}", method = {RequestMethod.POST, RequestMethod.PUT})
     public String update(@ModelAttribute Account account) {
         this.accountRepository.save(account);
         return "redirect:/customer/account/" + account.getId();

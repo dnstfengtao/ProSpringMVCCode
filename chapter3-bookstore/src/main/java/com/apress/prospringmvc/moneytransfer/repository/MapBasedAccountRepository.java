@@ -1,10 +1,10 @@
 package com.apress.prospringmvc.moneytransfer.repository;
 
+import javax.annotation.PostConstruct;
+
 import java.math.BigDecimal;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
-import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 import com.apress.prospringmvc.moneytransfer.domain.Account;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */

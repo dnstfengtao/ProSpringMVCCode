@@ -4,10 +4,9 @@ import com.apress.prospringmvc.bookstore.domain.Account;
 
 /**
  * Repository for working with {@link Account} domain objects
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public interface AccountRepository {
 

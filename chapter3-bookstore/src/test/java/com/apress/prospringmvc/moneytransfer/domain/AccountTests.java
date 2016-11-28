@@ -1,16 +1,16 @@
 package com.apress.prospringmvc.moneytransfer.domain;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import java.math.BigDecimal;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 public class AccountTests {
 
     private static final BigDecimal THOUSAND = new BigDecimal("1000.00");
-    private static final BigDecimal HUNDRED = new BigDecimal("100.00");
+    private static final BigDecimal HUNDRED  = new BigDecimal("100.00");
 
     @Test
     public void creation() {

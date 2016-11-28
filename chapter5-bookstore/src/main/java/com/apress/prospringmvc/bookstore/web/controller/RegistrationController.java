@@ -1,10 +1,10 @@
 package com.apress.prospringmvc.bookstore.web.controller;
 
+import javax.validation.Valid;
+
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,10 +21,9 @@ import com.apress.prospringmvc.bookstore.validation.AccountValidator;
 
 /**
  * Controller to handle the registration of a new {@code Account}
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 @Controller
 @RequestMapping("/customer/register")
@@ -56,7 +55,7 @@ public class RegistrationController {
         return account;
     }
 
-    @RequestMapping(method = { RequestMethod.POST, RequestMethod.PUT })
+    @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
     public String handleRegistration(@Valid @ModelAttribute Account account, BindingResult result) {
         if (result.hasErrors()) {
             return "customer/register";

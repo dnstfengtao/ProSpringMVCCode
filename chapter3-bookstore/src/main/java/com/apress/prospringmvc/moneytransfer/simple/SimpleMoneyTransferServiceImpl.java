@@ -13,14 +13,13 @@ import com.apress.prospringmvc.moneytransfer.service.MoneyTransferService;
 
 /**
  * {@code MoneyTransferService} implementation which instantiates the needed beans itself.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public class SimpleMoneyTransferServiceImpl implements MoneyTransferService {
 
-    private AccountRepository accountRepository = new MapBasedAccountRepository();
+    private AccountRepository     accountRepository     = new MapBasedAccountRepository();
     private TransactionRepository transactionRepository = new MapBasedTransactionRepository();
 
     public SimpleMoneyTransferServiceImpl() {

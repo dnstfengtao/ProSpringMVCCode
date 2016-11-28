@@ -14,16 +14,16 @@ import com.apress.prospringmvc.bookstore.domain.support.InitialDataSetup;
 
 /**
  * Configures the test context
- * 
+ * <p>
  * <ul>
  * <li>Starts an internal H2 database with an attached TCP connector so you can connect externally to it</li>
  * <li>Creates a datasource to in memory started database</li>
  * <li>Loads the database with test data using {@link InitialDataSetup}
  * </ul>
- * 
+ * <p>
  * <b>Note:</b> After starting the container, you can use the following URL (with your favoriate JDBC client) to connect
  * to the database: <i>jdbc:h2:tcp://localhost/mem:testdb</i>
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
  */
@@ -31,21 +31,21 @@ import com.apress.prospringmvc.bookstore.domain.support.InitialDataSetup;
 @Configuration
 public class TestDataContextConfiguration {
 
-	@Autowired
-	private PlatformTransactionManager transactionManager;
+    @Autowired
+    private PlatformTransactionManager transactionManager;
 
-	@Bean(initMethod = "initialize")
-	public InitialDataSetup setupData() {
-		return new InitialDataSetup(new TransactionTemplate(this.transactionManager));
-	}
+    @Bean(initMethod = "initialize")
+    public InitialDataSetup setupData() {
+        return new InitialDataSetup(new TransactionTemplate(this.transactionManager));
+    }
 
-	@Bean(initMethod = "start", destroyMethod = "shutdown")
-	@DependsOn("dataSource")
-	public Server dataSourceTcpConnector() {
-		try {
-			return Server.createTcpServer();
-		} catch (SQLException sqlException) {
-			throw new RuntimeException(sqlException);
-		}
-	}
+    @Bean(initMethod = "start", destroyMethod = "shutdown")
+    @DependsOn("dataSource")
+    public Server dataSourceTcpConnector() {
+        try {
+            return Server.createTcpServer();
+        } catch (SQLException sqlException) {
+            throw new RuntimeException(sqlException);
+        }
+    }
 }

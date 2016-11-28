@@ -1,31 +1,25 @@
 package com.apress.prospringmvc.bookstore.domain.support;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import com.apress.prospringmvc.bookstore.domain.Account;
-import com.apress.prospringmvc.bookstore.domain.Book;
-import com.apress.prospringmvc.bookstore.domain.Category;
-import com.apress.prospringmvc.bookstore.domain.Order;
-import com.apress.prospringmvc.bookstore.domain.Permission;
-import com.apress.prospringmvc.bookstore.domain.Role;
+import com.apress.prospringmvc.bookstore.domain.*;
 import com.apress.prospringmvc.bookstore.domain.support.EntityBuilder.EntityBuilderManager;
 
 /**
  * Sets up initial data so the application can be used straight away. The data setup is executed in a separate
  * transaction, and committed when the {@link #setupData()} method returns
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 public class InitialDataSetup {
 
@@ -35,14 +29,14 @@ public class InitialDataSetup {
     private EntityManager entityManager;
 
     private Permission permissionAddCategories = new Permission("PERM_ADD_CATEGORIES");
-    private Permission permissionAddBooks = new Permission("PERM_ADD_BOOKS");
-    private Permission permissionCreateOrders = new Permission("PERM_CREATE_ORDER");
+    private Permission permissionAddBooks      = new Permission("PERM_ADD_BOOKS");
+    private Permission permissionCreateOrders  = new Permission("PERM_CREATE_ORDER");
 
     private Role roleCustomer = new Role("ROLE_CUSTOMER");
-    private Role roleAdmin = new Role("ROLE_ADMIN");
-    private Role roleAuthor = new Role("ROLE_AUTHOR");
+    private Role roleAdmin    = new Role("ROLE_ADMIN");
+    private Role roleAuthor   = new Role("ROLE_AUTHOR");
 
-    private Account johnDoe;
+    private Account  johnDoe;
     private Category category;
 
     public InitialDataSetup(TransactionTemplate transactionTemplate) {
@@ -136,8 +130,10 @@ public class InitialDataSetup {
                         {
                             title("Refactoring: Improving the Design of Existing Code");
                             isbn("9780201485677");
-                            description("Refactoring is about improving the design of existing code. It is the process of "
-                                    + "changing a software system in such a way that it does not alter the external beha"
+                            description("Refactoring is about improving the design of existing code. It is the " +
+                                    "process of "
+                                    + "changing a software system in such a way that it does not alter the external " +
+                                    "beha"
                                     + "vior of the code, yet improves its internal structure.");
                             author("Martin Fowler");
                             year(1999);
@@ -150,8 +146,10 @@ public class InitialDataSetup {
                         {
                             title("Clean Code: A Handbook of Agile Software Craftsmanship");
                             isbn("9780132350884");
-                            description("Even bad code can function. But if code isn't clean, it can bring a development organization "
-                                    + "to its knees. Every year, countless hours and significant resources are lost because of poorly "
+                            description("Even bad code can function. But if code isn't clean, it can bring a " +
+                                    "development organization "
+                                    + "to its knees. Every year, countless hours and significant resources are lost " +
+                                    "because of poorly "
                                     + "written code. But it doesn't have to be that way.");
                             author("Robert C. Martin");
                             year(2008);
@@ -164,8 +162,10 @@ public class InitialDataSetup {
                         {
                             title("Agile Software Development, Principles, Patterns, and Practices");
                             isbn("9780135974445");
-                            description("A unique collection of the latest software development methods. Includes OOD, UML, Design Patterns, Agile and XP methods with a "
-                                    + "detailed description of a complete software design for reusable programs in C++ and Java.");
+                            description("A unique collection of the latest software development methods. Includes " +
+                                    "OOD, UML, Design Patterns, Agile and XP methods with a "
+                                    + "detailed description of a complete software design for reusable programs in " +
+                                    "C++ and Java.");
                             author("Robert C. Martin");
                             year(2002);
                             price("54.61");
@@ -177,8 +177,10 @@ public class InitialDataSetup {
                         {
                             title("Practical API Design: Confessions of a Java Framework Architect");
                             isbn("9781430209737");
-                            description("The definitive guide to API design, this book will be required reading for all "
-                                    + "designers and engineers involved with the development, testing, and maintenance of APIs.");
+                            description("The definitive guide to API design, this book will be required reading for " +
+                                    "all "
+                                    + "designers and engineers involved with the development, testing, and " +
+                                    "maintenance of APIs.");
                             author("Jaroslav Tulach");
                             year(2008);
                             price("56.01");

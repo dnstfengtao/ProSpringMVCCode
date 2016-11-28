@@ -19,21 +19,21 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Configures the main infrastructure related beans such as:
- * 
+ * <p>
  * <ul>
  * <li>Creates the {@link EntityManagerFactory} based upon information in the META-INF/persistence.xml
  * <li>Creates a JPA local transaction manager</li>
  * <li>Creates a datasource to a local database</li>
  * </ul>
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
  */
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = { "com.apress.prospringmvc.bookstore.service",
-        "com.apress.prospringmvc.bookstore.repository", "com.apress.prospringmvc.bookstore.domain.support" })
+@ComponentScan(basePackages = {"com.apress.prospringmvc.bookstore.service",
+        "com.apress.prospringmvc.bookstore.repository", "com.apress.prospringmvc.bookstore.domain.support"})
 public class InfrastructureContextConfiguration {
 
     @Autowired

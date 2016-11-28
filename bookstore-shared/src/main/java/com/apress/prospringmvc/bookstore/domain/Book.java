@@ -1,14 +1,9 @@
 package com.apress.prospringmvc.bookstore.domain;
 
+import javax.persistence.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-
-import javax.persistence.Cacheable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -18,10 +13,8 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 @Entity
 @Cacheable
@@ -32,12 +25,12 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title;
-    private String description;
+    private String     title;
+    private String     description;
     private BigDecimal price;
-    private Integer year;
-    private String author;
-    private String Isbn;
+    private Integer    year;
+    private String     author;
+    private String     Isbn;
 
     @ManyToOne(optional = false)
     private Category category;

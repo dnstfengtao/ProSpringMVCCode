@@ -6,14 +6,13 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */
 public class Account {
 
-    private String owner;
     private final String number;
+    private       String owner;
     private BigDecimal balance = BigDecimal.ZERO;
 
     public Account(final String number) {
@@ -40,12 +39,12 @@ public class Account {
         return this.balance;
     }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
     public String getOwner() {
         return this.owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     @Override

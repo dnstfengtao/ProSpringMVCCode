@@ -8,17 +8,16 @@ import java.util.Map.Entry;
 
 import org.springframework.stereotype.Component;
 
-import com.apress.prospringmvc.bookstore.domain.Book;
 import com.apress.prospringmvc.bookstore.domain.Account;
+import com.apress.prospringmvc.bookstore.domain.Book;
 import com.apress.prospringmvc.bookstore.domain.Order;
 import com.apress.prospringmvc.bookstore.domain.OrderDetail;
 
 /**
  * Builds {@link Order} domain objects
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 @Component
 public class OrderBuilder extends EntityBuilder<Order> {

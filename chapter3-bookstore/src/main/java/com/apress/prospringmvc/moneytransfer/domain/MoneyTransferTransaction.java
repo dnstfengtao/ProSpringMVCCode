@@ -3,7 +3,6 @@ package com.apress.prospringmvc.moneytransfer.domain;
 import java.math.BigDecimal;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */

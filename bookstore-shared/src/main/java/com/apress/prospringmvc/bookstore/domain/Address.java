@@ -1,17 +1,16 @@
 package com.apress.prospringmvc.bookstore.domain;
 
-import java.io.Serializable;
-
 import javax.persistence.Embeddable;
+
+import java.io.Serializable;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * A component which resembles the address of a {@link Account}
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 @Embeddable
 public class Address implements Serializable {

@@ -10,10 +10,9 @@ import com.apress.prospringmvc.bookstore.domain.Role;
 
 /**
  * Builds {@link Account} domain objects
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- * 
  */
 @Component
 public class AccountBuilder extends EntityBuilder<Account> {
@@ -30,7 +29,7 @@ public class AccountBuilder extends EntityBuilder<Account> {
     }
 
     public AccountBuilder address(String city, String postalCode, String street, String houseNumber, String boxNumber,
-            String country) {
+                                  String country) {
         Address address = new Address();
         address.setStreet(street);
         address.setCity(city);

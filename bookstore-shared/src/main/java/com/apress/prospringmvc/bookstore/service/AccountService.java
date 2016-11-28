@@ -4,10 +4,9 @@ import com.apress.prospringmvc.bookstore.domain.Account;
 
 /**
  * Contract for services that work with an {@link Account}.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public interface AccountService {
 
@@ -16,6 +15,7 @@ public interface AccountService {
     /**
      * Handles the login logic. If the {@link Account} can be retrieved and the password is correct we get the
      * {@link Account}. In all other cases we get a {@link AuthenticationException}.
+     *
      * @param username the username
      * @param password the password
      * @return the account

@@ -6,16 +6,15 @@ import com.apress.prospringmvc.bookstore.domain.Category;
 
 /**
  * Repository for working with {@link Category} domain objects
- *  
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public interface CategoryRepository {
 
-	List<Category> findAll();
+    List<Category> findAll();
 
-	Category findById(long id);
+    Category findById(long id);
 
-	void storeCategory(Category category);
+    void storeCategory(Category category);
 }

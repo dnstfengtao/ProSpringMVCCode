@@ -9,13 +9,13 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Base class for transaction subclasses.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
  */
 public abstract class Transaction {
 
-    private final Account source;
+    private final Account    source;
     private final BigDecimal amount;
     private final Date date = new Date();
 

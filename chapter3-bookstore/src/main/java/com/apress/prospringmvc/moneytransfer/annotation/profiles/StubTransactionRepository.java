@@ -11,7 +11,6 @@ import com.apress.prospringmvc.moneytransfer.domain.Transaction;
 import com.apress.prospringmvc.moneytransfer.repository.TransactionRepository;
 
 /**
- * 
  * @author Marten Deinum
  * @author Koen Serneels
  */

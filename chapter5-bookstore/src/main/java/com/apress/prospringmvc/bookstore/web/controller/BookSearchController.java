@@ -16,10 +16,9 @@ import com.apress.prospringmvc.bookstore.service.BookstoreService;
 
 /**
  * Controller to handle book search requests.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 @Controller
 public class BookSearchController {
@@ -38,15 +37,14 @@ public class BookSearchController {
     }
 
     /**
-     * This method searches our database for books based on the given {@link BookSearchCriteria}. 
+     * This method searches our database for books based on the given {@link BookSearchCriteria}.
      * Only books matching the criteria are returned.
-     * 
+     *
      * @param criteria the criteria used for searching
      * @return the found books
-     * 
      * @see com.apress.prospringmvc.bookstore.repository.BookRepository#findBooks(BookSearchCriteria)
      */
-    @RequestMapping(value = "/book/search", method = { RequestMethod.GET })
+    @RequestMapping(value = "/book/search", method = {RequestMethod.GET})
     public Collection<Book> list(@ModelAttribute("bookSearchCriteria") BookSearchCriteria criteria) {
         return this.bookstoreService.findBooks(criteria);
     }

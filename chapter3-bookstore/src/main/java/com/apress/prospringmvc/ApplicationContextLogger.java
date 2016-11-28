@@ -8,10 +8,9 @@ import org.springframework.context.ApplicationContext;
 
 /**
  * Helper class to log some basic information about the {@link ApplicationContext}
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public class ApplicationContextLogger {
 
@@ -20,7 +19,7 @@ public class ApplicationContextLogger {
     public static void log(ApplicationContext context) {
         LOG.info("Context: {},{}", context.getClass(), context.getDisplayName());
         LOG.info("Beans: {}", context.getBeanDefinitionCount());
-        LOG.info("Active profiles: {}", (Object[])context.getEnvironment().getActiveProfiles());
+        LOG.info("Active profiles: {}", (Object[]) context.getEnvironment().getActiveProfiles());
         for (String name : context.getBeanDefinitionNames()) {
             LOG.info("Bean: {}", name);
         }

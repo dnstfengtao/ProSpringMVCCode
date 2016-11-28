@@ -7,10 +7,9 @@ import com.apress.prospringmvc.moneytransfer.domain.Transaction;
 
 /**
  * Repository to store and retrieve {@code Transaction}s.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 public interface TransactionRepository {
 

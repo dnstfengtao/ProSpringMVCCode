@@ -1,10 +1,10 @@
 package com.apress.prospringmvc.bookstore.converter;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;

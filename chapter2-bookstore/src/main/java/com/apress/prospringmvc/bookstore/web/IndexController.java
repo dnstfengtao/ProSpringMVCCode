@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Controller shows the index page.
- * 
+ *
  * @author Marten Deinum
  * @author Koen Serneels
  */

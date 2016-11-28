@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Controller to handle logout. 
- * 
+ * Controller to handle logout.
+ *
  * @author Marten Deinum
  * @author Koen Serneels
- *
  */
 @Controller
 public class LogoutController {
